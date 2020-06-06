@@ -13,7 +13,8 @@ class Routes {
     this.routes.get('/conta-cliente/:id', ContaCliente.getOne);
     this.routes.post('/conta-cliente', ContaCliente.create);
     this.routes.put('/conta-cliente/:id', ContaCliente.update);
-    this.routes.delete('/conta-cliente/:id', ContaCliente.remove)
+    this.routes.delete('/conta-cliente/:id', ContaCliente.remove);
+    this.routes.post('/conta-cliente/:id/movimentar/saque', ContaCliente.withdraw);
   }
 }
 
