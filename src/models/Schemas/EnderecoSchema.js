@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 
 // definicao do schema de endereco
-module.exports = new new Schema({
+module.exports = new Schema({
   logradouro: String,
   bairro: String,
   cidade: String,

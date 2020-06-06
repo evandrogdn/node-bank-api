@@ -10,7 +10,7 @@ module.exports = {
   update: async (req, res) => {
     const { titular, inscrFederal, endereco, contato, conta, saldo } = req.body;
     const original = await ContaClienteModel.findById(req.params.id);
-    Object.assign(original, { titular, inscrFederal, endereco, contato, conta, saldo})
+    Object.assign(original, { titular, inscrFederal, endereco, contato, conta, saldo }).save();
     return res.json(original);
   },
   remove: async (req, res) => {
