@@ -1,4 +1,4 @@
-const { ContaClienteModel } = require('../Models');
+const { ContaClienteModel } = require('../models');
 
 module.exports = {
   index: async (req, res) => res.json(await ContaClienteModel.find().sort('-createdAt')),
