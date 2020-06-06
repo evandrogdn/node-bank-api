@@ -1,4 +1,5 @@
 const express = require('express');
+const routes = require('./../api/routes');
 
 class App {
   constructor() {
@@ -6,6 +7,7 @@ class App {
     this.server = express();
     // adiciona os middlewares, principalmente, os relacionados aos CORS
     this.middlewares();
+    this.routes();
   };
 
   middlewares() {
@@ -20,6 +22,10 @@ class App {
       next();
     });
   };
+
+  routes() {
+    this.server.use('api/v1/', routes);
+  }
 }
 
 module.exports = new App().server;
