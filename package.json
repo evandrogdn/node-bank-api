@@ -1,0 +1,20 @@
+{
+  "name": "bank-api",
+  "version": "1.0.0",
+  "description": "API desenvolvida para o trabalho final da matéria de Desenvolvimento para Plataformas Móveis",
+  "main": "src/index.js",
+  "author": "Evandro Gardolin <evandrogardolinn@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  }
+}
