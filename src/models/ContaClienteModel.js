@@ -9,6 +9,7 @@ const ContaCorrenteSchema = new Schema({
   inscrFederal: String,
   endereco: Endereco,
   contato: Contato,
+  agencia: Agencia,
   conta: Conta,
   saldo: {
     type: Number,
