@@ -1,7 +1,7 @@
 // libs
 const { Schema, model } = require('mongoose');
 // schemas
-const { Contato, Endereco, Conta } = require('./Schemas')
+const { Agencia, Conta, Contato, Endereco } = require('./Schemas')
 
 // definicao do schema da conta corrente
 const ContaCorrenteSchema = new Schema({
