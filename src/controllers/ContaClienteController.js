@@ -38,6 +38,22 @@ module.exports = {
     if (!valorMovimento) return res.json({success: false, message: 'Não fornecido valor para movimentação'});
     const saldoConta = get(conta, 'saldo', 0);
     Object.assign(conta, {saldo: (saldoConta + valorMovimento)}).save();
-    return res.json({success: true, message: 'Movimentacao realizada com sucesso'})
-  }
+    return res.json({success: true, message: 'Movimentacao realizada com sucesso'});
+  },
+  transfer: async (req, res) => {
+    const { valorMovimento, contaOrigem, contaDestino } = req.body;
+    if (!valorMovimento) return res.json({success: false, message: 'Não fornecido valor para movimentação'});
+    if (!contaOrigem) return res.json({success: false, message: 'Conta origem não fornecida'});
+    if (!contaDestino) return res.json({success: false, message: 'Conta destino não fornecida'});
+    const origem = await ContaClienteModel.findById(contaOrigem);
+    if (!origem) return res.json({success: false, message: 'Conta destino não encontrada'});
+    const destino = await ContaClienteModel.findById(contaDestino);
+    if (!destino) return res.json({success: false, message: 'Conta destino não encontrada'});
+    const saldoOrigem = get(origem, 'saldo', 0);
+    if (saldoOrigem < valorMovimento) return res.json({success: false, message: 'Saldo insuficiente'});
+    Object.assign(origem, {saldo: saldoOrigem - valorMovimento}).save();
+    const saldoDestino = get(destino, 'saldo', 0);
+    Object.assign(destino, {saldo: saldoDestino + valorMovimento}).save();
+    return res.json({success: true, message: 'Movimentacao realizada com sucesso'});
+  },
 }

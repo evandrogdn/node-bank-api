@@ -16,6 +16,7 @@ class Routes {
     this.routes.delete('/conta-cliente/:id', ContaCliente.remove);
     this.routes.post('/conta-cliente/:id/movimentar/saque', ContaCliente.withdraw);
     this.routes.post('/conta-cliente/:id/movimentar/deposito', ContaCliente.deposit);
+    this.routes.post('/conta-cliente/movimentar/transferir', ContaCliente.transfer)
   }
 }
 
