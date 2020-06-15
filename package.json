@@ -16,6 +16,7 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
+    "dev-db": "docker-compose down && docker-compose up -d && nodemon src/index.js",
     "dev": "nodemon src/index.js"
   }
 }
