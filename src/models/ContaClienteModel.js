@@ -13,7 +13,8 @@ const ContaCorrenteSchema = new Schema({
   conta: Conta,
   saldo: {
     type: Number,
-    optional: true
+    optional: true,
+    default: 0
   }
 }, {
   timestamps: true

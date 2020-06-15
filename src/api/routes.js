@@ -9,14 +9,14 @@ class Routes {
   }
 
   loadRotasContaCliente() {
-    this.routes.get('/conta-cliente', ContaCliente.index);
-    this.routes.get('/conta-cliente/:id', ContaCliente.getOne);
-    this.routes.post('/conta-cliente', ContaCliente.create);
-    this.routes.put('/conta-cliente/:id', ContaCliente.update);
-    this.routes.delete('/conta-cliente/:id', ContaCliente.remove);
-    this.routes.post('/conta-cliente/:id/movimentar/saque', ContaCliente.withdraw);
-    this.routes.post('/conta-cliente/:id/movimentar/deposito', ContaCliente.deposit);
-    this.routes.post('/conta-cliente/movimentar/transferir', ContaCliente.transfer)
+    this.routes.get('/api/v1/conta-cliente', ContaCliente.index);
+    this.routes.get('/api/v1/conta-cliente/:id', ContaCliente.getOne);
+    this.routes.post('/api/v1/conta-cliente', ContaCliente.create);
+    this.routes.put('/api/v1/conta-cliente/:id', ContaCliente.update);
+    this.routes.delete('/api/v1/conta-cliente/:id', ContaCliente.remove);
+    this.routes.post('/api/v1/conta-cliente/:id/movimentar/saque', ContaCliente.withdraw);
+    this.routes.post('/api/v1/conta-cliente/:id/movimentar/deposito', ContaCliente.deposit);
+    this.routes.post('/api/v1/conta-cliente/movimentar/transferir', ContaCliente.transfer);
   }
 }
 
